@@ -5,18 +5,18 @@ Automation for finding dependencies between projects
 ## Usage
 
 You first need to have cloned all the dotnet Dolittle repositories.
-All the repositories will be grouped by organisation e.g. :
+All the repositories will be grouped by organisations e.g. :
 
 ```
-+-- Dolittle [ e.g /usr/home/Dolittle ]
-|   +-- interaction ( for dolittle-interaction )
-|   |   +--- AspNetCore
-|   |   +--- AspNetCore.Debugging
-|   |   +--- WebAssembly
++-- Dolittle/ [ e.g /usr/home/Dolittle/ ]
+|   +-- interaction/ ( for dolittle-interaction )
+|   |   +--- AspNetCore/
+|   |   +--- AspNetCore.Debugging/
+|   |   +--- WebAssembly/
 |   |   +--- ...    
-|   +-- fundamentals ( dolittle-fundamentals )
+|   +-- fundamentals/ ( dolittle-fundamentals )
 |   |   +--- ...
-|   +-- runtime
+|   +-- runtime/
 |   +-- ...
 ```
 
