@@ -29,4 +29,6 @@ $ ./dependencies.sh /usr/home/Dolittle/
 If a dependency is **Not Found**, that means that the project containing the dependency is not in the folder given as parameter. Check if you have clone all the repositories you need and/or check if you specified the good folder.
 
 
-*Work in progress to get something more user friendly*
+
+
+*~ Work in progress to get something more user friendly*
