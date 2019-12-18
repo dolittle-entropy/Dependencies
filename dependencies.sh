@@ -43,8 +43,10 @@ run () {
         fancy_f=`echo $sub | awk -F"/" '{print $2"/"$3}'`
         proj_files=`find $sub -type f | grep .csproj$`
         if [ -n "$proj_files" ]; then
-            echo -e "${CYAN}dolittle-$fancy_f depends on :${NC}"
             depends=`cat $proj_files | grep '<PackageReference Include=\"Dolittle.' | awk -F"\"" '{print $2}' | sort -u`
+            if [ -n "$depends" ]; then
+                echo -e "${CYAN}dolittle-$fancy_f depends on :${NC}"
+            fi
         fi
             for d in $depends
             do 
