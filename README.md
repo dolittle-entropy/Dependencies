@@ -23,7 +23,7 @@ All the repositories will be grouped by organisations e.g. :
 Next you can launch the script and specify the path of the folder containing all the repositories.
 
 ```
-$ ./dependencies.sh /usr/home/Dolittle
+$ ./dependencies.sh /usr/home/Dolittle/
 ```
 
 If a dependency is **Not Found**, that means that the project containing the dependency is not in the folder given as parameter. Check if you have clone all the repositories you need and/or check if you specified the good folder.
