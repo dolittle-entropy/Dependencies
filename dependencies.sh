@@ -8,7 +8,8 @@ NC=`tput sgr0`
 
 process () {
     dependency="$1"
-    repositories=`find . -type d | awk -F "/" '{print $1"/"$2"/"$3}' | sort -u | grep -E \./.+/.+ `
+    dir="$2"
+    repositories=`find $2 -type d | awk -F "/" '{print $1"/"$2"/"$3}' | sort -u | grep -E \./.+/.+ `
     parent=""
     package=`echo $dependency | awk -F"Dolittle." '{print $2}'`
 
@@ -51,7 +52,7 @@ run () {
             for d in $depends
             do 
                 if [ -n "$d" ]; then
-                    process "$d"
+                    process "$d" "$dir"
                 fi
             done
         if [ -n "$proj_files" ]; then
@@ -84,13 +85,11 @@ short () {
 }
 
 main () {
-    if [ "$#" -eq 0 ]; then
-        dir="."
+    if [ "$#" -eq 1 ]; then
+        dir="$1"
         run "$dir"
     else
-        echo "Processing summary..."
-        display=$(run "$dir")
-        short $display
+        echo -e "Please specify the absolute path of the folder containing all your Dolittle's projects\n"
     fi
 }
 main $@
