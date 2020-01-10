@@ -92,7 +92,7 @@ run () {
 
     for sub in $repositories
     do
-        fancy_f=`echo $sub | awk -F"/" '{print $1"/"$2"/"$3}'`
+        fancy_f=`echo $sub | awk -F"/" '{print $2"/"$3}'`
         proj_files=`find $sub -type f | grep .csproj$`
         if [ -n "$proj_files" ]; then
             depends=`cat $proj_files | grep '<PackageReference Include=\"Dolittle.' | awk -F"\"" '{print $2}' | sort -u`
