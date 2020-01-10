@@ -70,15 +70,15 @@ run_for_one () {
                 if [ -n "$depends" ]; then
                     echo -e "\n${CYAN}dolittle-$fancy_f depends on :${NC}"
                 fi
-            fi
-            for d in $depends
-            do 
-                if [ -n "$d" ]; then
-                    process "$d"
+                for d in $depends
+                do 
+                    if [ -n "$d" ]; then
+                        process "$d"
+                    fi
+                done
+                if [ -n "$proj_files" ]; then
+                    echo -n ""
                 fi
-            done
-            if [ -n "$proj_files" ]; then
-                echo -n ""
             fi
         fi
     done   
